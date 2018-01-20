@@ -1,0 +1,46 @@
+﻿{
+  "IpRateLimiting": {
+    "EnableEndpointRateLimiting": false,
+    "DisableRateLimitHeaders": true,
+    "StackBlockedRequests": false,
+    "RealIpHeader": "X-Real-IP",
+    "ClientIdHeader": "X-ClientId",
+    "HttpStatusCode": 429,
+    "QuotaExceededMessage": "IP Rate limiting has been reached.",
+    "IpWhitelist": [ "127.0.0.1" ],
+    "EndpointWhitelist": [],
+    "ClientWhitelist": [],
+    "GeneralRules": [
+      {
+        "Endpoint": "*",
+        "Period": "1s",
+        "Limit": 50
+      },
+      {
+        "Endpoint": "*",
+        "Period": "1m",
+        "Limit": 300
+      }
+    ]
+  },
+  "ClientRateLimiting": {
+    "EnableEndpointRateLimiting": false,
+    "DisableRateLimitHeaders": true,
+    "StackBlockedRequests": false,
+    "ClientIdHeader": "X-ClientId",
+    "HttpStatusCode": 429,
+    "QuotaExceededMessage": "API quota has been reached.",
+    "EndpointWhitelist": [],
+    "ClientWhitelist": [
+    ],
+    "GeneralRules": [
+      {
+        "Endpoint": "*",
+        "Period": "1d",
+        "Limit": 100
+      }
+    ]
+  },
+  "ClientRateLimitPolicies": {
+  }
+}
