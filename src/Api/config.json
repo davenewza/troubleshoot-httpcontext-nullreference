@@ -14,12 +14,7 @@
       {
         "Endpoint": "*",
         "Period": "1s",
-        "Limit": 50
-      },
-      {
-        "Endpoint": "*",
-        "Period": "1m",
-        "Limit": 300
+        "Limit": 100
       }
     ]
   },
@@ -36,7 +31,7 @@
     "GeneralRules": [
       {
         "Endpoint": "*",
-        "Period": "1d",
+        "Period": "1s",
         "Limit": 100
       }
     ]
