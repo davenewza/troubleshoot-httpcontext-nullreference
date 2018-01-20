@@ -12,7 +12,9 @@ namespace Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return await Task.FromResult(Json("test"));
+            await Task.Delay(500);
+
+            return Json(Enumerable.Repeat("ABC", 10000));
         }
     }
 }
