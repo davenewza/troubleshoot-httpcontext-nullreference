@@ -9,3 +9,14 @@ C:\GitHub\troubleshoot-httpcontext-nullreference\src\Api\obj\Debug\netcoreapp2.0
 C:\GitHub\troubleshoot-httpcontext-nullreference\src\Api\obj\Debug\netcoreapp2.0\Api.dll
 C:\GitHub\troubleshoot-httpcontext-nullreference\src\Api\obj\Debug\netcoreapp2.0\Api.pdb
 C:\GitHub\troubleshoot-httpcontext-nullreference\src\Api\obj\Debug\netcoreapp2.0\Api.csprojResolveAssemblyReference.cache
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\bin\Debug\netcoreapp2.0\Api.deps.json
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.json
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.dev.json
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\bin\Debug\netcoreapp2.0\Api.dll
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\bin\Debug\netcoreapp2.0\Api.pdb
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\obj\Debug\netcoreapp2.0\Api.csprojResolveAssemblyReference.cache
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\obj\Debug\netcoreapp2.0\Api.csproj.CoreCompileInputs.cache
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\obj\Debug\netcoreapp2.0\Api.AssemblyInfoInputs.cache
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\obj\Debug\netcoreapp2.0\Api.AssemblyInfo.cs
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\obj\Debug\netcoreapp2.0\Api.dll
+C:\Git\troubleshoot-httpcontext-nullreference\src\Api\obj\Debug\netcoreapp2.0\Api.pdb
