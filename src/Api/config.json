@@ -37,5 +37,8 @@
     ]
   },
   "ClientRateLimitPolicies": {
+  },
+  "ApplicationInsights": {
+    "InstrumentationKey": "9ac649fd-0d93-4734-9fb6-79f778be32be"
   }
 }

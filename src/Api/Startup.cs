@@ -2,15 +2,15 @@
 using Api.Middleware.Compression;
 using Api.Middleware.Datastore;
 using Api.Middleware.RateLimiting;
+using Api.Middleware.Telemetry;
 using AspNetCoreRateLimit;
+using Microsoft.ApplicationInsights.AspNetCore.Extensions;
+using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using System.Globalization;
 using System.Net;
 using System.Text;
 
@@ -18,8 +18,6 @@ namespace Api
 {
     public class Startup
     {
-        private object environment;
-
         private IConfigurationRoot Configuration;
 
         public Startup(IHostingEnvironment environment)
@@ -42,7 +40,22 @@ namespace Api
                .Configure<ClientRateLimitOptions>(Configuration.GetSection("ClientRateLimiting"))
                .Configure<ClientRateLimitPolicies>(Configuration.GetSection("ClientRateLimitPolicies"));
 
+            var appInsightsOptions = new ApplicationInsightsServiceOptions()
+            {
+                InstrumentationKey = Configuration["ApplicationInsights:InstrumentationKey"],
+                DeveloperMode = false,
+                EnableAdaptiveSampling = false
+            };
+
+            services.AddApplicationInsightsTelemetry(appInsightsOptions);
+
             services.AddMemoryCache();
+            services.AddSingleton<ITelemetryInitializer, TokenClaimsTelemetryInitialiser>();
+            services.AddSingleton<ITelemetryInitializer, BuildVersioningTelemetryInitialiser>();
+            services.AddSingleton<ITelemetryInitializer, RequestNameTelemetryInitialiser>();
+            services.AddSingleton<ITelemetryInitializer, RequestIdTelemetryInitialiser>();
+            services.AddSingleton<ITelemetryInitializer, TestTypeTelemetryInitialiser>();
+            services.AddSingleton<ITelemetryInitializer, AttemptTelemetryInitialiser>();
             services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
             services.AddSingleton<IClientPolicyStore, MemoryCacheClientPolicyStore>();
             services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
